@@ -19,33 +19,32 @@ The MCP server handles the `bundletool` JAR automatically, but your underlying O
 1. **Java (JRE/JDK)**: Required to execute the JAR. Must be in your system `PATH`.
 2. **Android SDK Platform-Tools (ADB)**: Required to communicate with connected devices. Must be in your system `PATH`.
 
-## Installation
+## Installation & Configuration
 
-You can install the server binary directly using Go:
+Because this server interacts with your local Android hardware (ADB), it cannot be run inside an isolated Docker container. However, you have two incredibly easy ways to run it:
 
-```bash
-go install github.com/iammohdzaki/bundletool-mcp/cmd/bundletool-mcp@latest
-```
+### Option 1: Zero-Install (Recommended)
+If you have Go installed on your machine, you don't even need to download or install the binary manually! You can tell your AI IDE to fetch and run the latest version directly from GitHub on the fly. 
 
-*(This will place the `bundletool-mcp` binary in your `$GOPATH/bin` directory, which should be added to your system `PATH`.)*
-
-## Usage (MCP Configuration)
-
-To use this server with an MCP-compatible AI IDE or client, add the following to your MCP configuration file.
-
-### For Antigravity (`~/.gemini/config/mcp_config.json`)
+Just copy and paste this into your MCP configuration (e.g., `~/.gemini/config/mcp_config.json` for Antigravity, or `claude_desktop_config.json`):
 ```json
 {
   "mcpServers": {
     "bundletool": {
-      "command": "bundletool-mcp",
-      "args": []
+      "command": "go",
+      "args": ["run", "github.com/iammohdzaki/bundletool-mcp/cmd/bundletool-mcp@latest"]
     }
   }
 }
 ```
 
-### For Claude Desktop (`claude_desktop_config.json`)
+### Option 2: Global Binary Install
+If you prefer to compile it once, you can install the binary globally:
+
+```bash
+go install github.com/iammohdzaki/bundletool-mcp/cmd/bundletool-mcp@latest
+```
+Then, your MCP configuration just references the binary name:
 ```json
 {
   "mcpServers": {

@@ -1,4 +1,14 @@
 $ErrorActionPreference = "Stop"
+
+Write-Host @"
+  ____                  _ _    _____           _       __  __  ____ ____  
+ | __ ) _   _ _ __   __| | |__|_   _|__   ___ | |     |  \/  |/ ___|  _ \ 
+ |  _ \| | | | '_ \ / _` | / _ \| |/ _ \ / _ \| |_____| |\/| | |   | |_) |
+ | |_) | |_| | | | | (_| | ||  /| | (_) | (_) | |_____| |  | | |___|  __/ 
+ |____/ \__,_|_| |_|\__,_|_| \_\|_|\___/ \___/|_|     |_|  |_|\____|_|    
+                                                                          
+"@ -ForegroundColor Cyan
+Write-Host ""
 $InstallDir = Join-Path $HOME ".bundletool-mcp"
 $BinDir = Join-Path $InstallDir "bin"
 $ExeName = "bundletool-mcp-windows-amd64.exe"

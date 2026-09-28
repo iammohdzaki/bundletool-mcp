@@ -1,3 +1,11 @@
+```text
+  ____                  _ _    _____           _       __  __  ____ ____  
+ | __ ) _   _ _ __   __| | |__|_   _|__   ___ | |     |  \/  |/ ___|  _ \ 
+ |  _ \| | | | '_ \ / _` | / _ \| |/ _ \ / _ \| |_____| |\/| | |   | |_) |
+ | |_) | |_| | | | | (_| | ||  /| | (_) | (_) | |_____| |  | | |___|  __/ 
+ |____/ \__,_|_| |_|\__,_|_| \_\|_|\___/ \___/|_|     |_|  |_|\____|_|    
+```
+
 # BundleTool MCP Server
 
 [![CI](https://github.com/iammohdzaki/bundletool-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/iammohdzaki/bundletool-mcp/actions/workflows/ci.yml)

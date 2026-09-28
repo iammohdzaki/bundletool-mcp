@@ -38,7 +38,7 @@ jobs:
         env:
           GOOS: ${{ matrix.os }}
           GOARCH: ${{ matrix.arch }}
-        run: go build -o ${{ matrix.name }} ./cmd/bundletool-mcp
+        run: go build -ldflags="-X 'main.Version=${{ github.event.release.tag_name }}'" -o ${{ matrix.name }} ./cmd/bundletool-mcp
       - name: Upload to GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

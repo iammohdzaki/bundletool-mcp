@@ -11,6 +11,9 @@ import (
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 
+// Version is injected at build time using -ldflags
+var Version = "dev"
+
 func main() {
 	// 1. Dependency Injection Setup
 	exec := executor.NewDefaultExecutor()
@@ -25,7 +28,7 @@ func main() {
 	btClient := bundletool.NewClient(exec, jarPath)
 
 	// 2. Initialize the MCP Server Layer
-	server := mcp.NewServer(&mcp.Implementation{Name: "bundletool-mcp", Version: "1.0.0"}, nil)
+	server := mcp.NewServer(&mcp.Implementation{Name: "bundletool-mcp", Version: Version}, nil)
 
 	// Register the tool handlers
 	handlers := tools.NewHandlers(btClient)

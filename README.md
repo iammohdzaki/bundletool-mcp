@@ -21,12 +21,25 @@ The MCP server handles the `bundletool` JAR automatically, but your underlying O
 
 ## Installation & Configuration
 
-Because this server interacts with your local Android hardware (ADB), it cannot be run inside an isolated Docker container. However, you have two incredibly easy ways to run it:
+Because this server interacts with your local Android hardware (ADB), it cannot be run inside an isolated Docker container. Choose one of the three installation methods below:
 
-### Option 1: Zero-Install (Recommended)
-If you have Go installed on your machine, you don't even need to download or install the binary manually! You can tell your AI IDE to fetch and run the latest version directly from GitHub on the fly. 
+### Option 1: 1-Click Auto Installer (Easiest)
+If you don't have Go installed, you can use our auto-installer. It will automatically download the correct binary for your OS from GitHub Releases and print the exact JSON configuration for you to paste into your AI editor.
 
-Just copy and paste this into your MCP configuration (e.g., `~/.gemini/config/mcp_config.json` for Antigravity, or `claude_desktop_config.json`):
+**For Mac/Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/iammohdzaki/bundletool-mcp/main/install.sh | bash
+```
+
+**For Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/iammohdzaki/bundletool-mcp/main/install.ps1 | iex
+```
+
+### Option 2: Zero-Install (`go run`)
+If you are a developer with Go installed on your machine, you don't even need to download the binary manually. Tell your AI IDE to fetch and run the latest version directly from GitHub on the fly. 
+
+Just copy and paste this into your MCP configuration (`~/.gemini/config/mcp_config.json` for Antigravity, or `claude_desktop_config.json`):
 ```json
 {
   "mcpServers": {
@@ -38,18 +51,17 @@ Just copy and paste this into your MCP configuration (e.g., `~/.gemini/config/mc
 }
 ```
 
-### Option 2: Global Binary Install
-If you prefer to compile it once, you can install the binary globally:
-
-```bash
-go install github.com/iammohdzaki/bundletool-mcp/cmd/bundletool-mcp@latest
-```
-Then, your MCP configuration just references the binary name:
+### Option 3: Manual Binary Download
+If you prefer complete control:
+1. Go to the [GitHub Releases](https://github.com/iammohdzaki/bundletool-mcp/releases) page.
+2. Download the binary for your specific OS and architecture.
+3. Place it anywhere on your machine (e.g., `C:\mcp\bundletool-mcp.exe`).
+4. Point your MCP config directly to the executable:
 ```json
 {
   "mcpServers": {
     "bundletool": {
-      "command": "bundletool-mcp",
+      "command": "C:\\mcp\\bundletool-mcp.exe",
       "args": []
     }
   }

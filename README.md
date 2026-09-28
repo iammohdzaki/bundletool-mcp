@@ -1,5 +1,10 @@
 # BundleTool MCP Server
 
+[![CI](https://github.com/iammohdzaki/bundletool-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/iammohdzaki/bundletool-mcp/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/iammohdzaki/bundletool-mcp?color=blue)](https://github.com/iammohdzaki/bundletool-mcp/releases)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/iammohdzaki/bundletool-mcp)](https://golang.org/)
+[![License](https://img.shields.io/github/license/iammohdzaki/bundletool-mcp)](LICENSE)
+
 A fully-featured [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that empowers AI assistants (like Claude, Antigravity, and Cursor) to natively interact with Android's `bundletool`. 
 
 This server allows LLMs to automatically build, extract, size, and install Android APKs directly to your connected devices from Android App Bundles (`.aab`).

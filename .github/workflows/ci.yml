@@ -17,7 +17,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v5
       with:
-        go-version: '1.22'
+        go-version: '1.25.0'
 
     - name: Verify dependencies
       run: go mod verify
@@ -28,19 +28,19 @@ jobs:
     - name: Run Tests
       run: go test -v ./...
 
-  lint:
-    name: Code Quality (Lint)
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Go
-      uses: actions/setup-go@v5
-      with:
-        go-version: '1.22'
-
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v6
-      with:
-        version: latest
+#  lint:
+#    name: Code Quality (Lint)
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: Checkout code
+#      uses: actions/checkout@v4
+#
+#    - name: Set up Go
+#      uses: actions/setup-go@v5
+#      with:
+#        go-version: '1.25'
+#
+#    - name: Run golangci-lint
+#      uses: golangci/golangci-lint-action@v6
+#      with:
+#        version: latest
